@@ -8,29 +8,33 @@ public class DriverMainClass_RavindraPatil {
 		
 		Scanner scan = new Scanner(System.in);
 		
+		System.out.println("Enter your account number ");
+		String accountNumber = scan.nextLine();
+		
 		System.out.println("Enter Initial Balance ");
 		double initialBalance = scan.nextDouble();
-		SavingsAccount_RP s1 = new SavingsAccount_RP("123456", initialBalance);
+		
+		SavingsAccount_RP savingAcct = new SavingsAccount_RP(accountNumber, initialBalance);
 		
 		System.out.println("Enter Deposit Amount ");
 		double depositAmount = scan.nextDouble();
-		s1.deposit(depositAmount);
+		savingAcct.deposit(depositAmount);
 		
-		System.out.println("New Balance After Deposit => " + s1.getBalance());
+		System.out.println("New Balance After Deposit => " + savingAcct.getBalance());
 		
 				
 		System.out.println("Enter Withdraw Amount ");
 		double withdrawalAmount = scan.nextDouble();
-		s1.withdraw(withdrawalAmount);
+		savingAcct.withdraw(withdrawalAmount);
 		
-		System.out.println("New Balance After withdraw => " + s1.getBalance());
+		System.out.println("New Balance After withdraw => " + savingAcct.getBalance());
 		
 				
 		System.out.println("Enter Withdraw Amount ");
 		double withdrawalAmount1 = scan.nextDouble();
-		s1.withdraw(withdrawalAmount1);
+		savingAcct.withdraw(withdrawalAmount1);
 		
-		System.out.println("New Balance After withdraw => " + s1.getBalance());
+		System.out.println("New Balance After withdraw => " + savingAcct.getBalance());
 		
 		scan.close();
 

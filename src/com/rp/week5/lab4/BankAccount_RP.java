@@ -6,7 +6,16 @@ public class BankAccount_RP {
 	private double balance;
 	
 	public BankAccount_RP(String accountNumber, double balance) {
-		this.accountNumber = accountNumber;
+		
+		if (accountNumber == null || accountNumber.trim().isEmpty()) {
+        	throw new IllegalArgumentException("Account number can not be empty");
+        }
+		
+		if (balance <= 0.0) {
+			throw new IllegalArgumentException("Blance must be greater than zero");
+		}        
+        
+        this.accountNumber = accountNumber;
 		this.balance = balance;
 	}
 	
