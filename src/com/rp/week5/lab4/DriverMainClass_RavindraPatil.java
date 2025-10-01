@@ -30,9 +30,17 @@ public class DriverMainClass_RavindraPatil {
 		System.out.println("New Balance After withdraw => " + savingAcct.getBalance());
 		
 				
-		System.out.println("Enter Withdraw Amount ");
-		double withdrawalAmount1 = scan.nextDouble();
-		savingAcct.withdraw(withdrawalAmount1);
+		while(true) {
+			System.out.println("Enter Withdraw Amount ");
+			double withdrawalAmount1 = scan.nextDouble();
+			if (withdrawalAmount1 > savingAcct.getBalance()) {
+				System.out.println("Insufficient balance! Try again.");
+                continue; 
+			} else {
+				savingAcct.withdraw(withdrawalAmount1);
+                break;
+			}
+		}
 		
 		System.out.println("New Balance After withdraw => " + savingAcct.getBalance());
 		
